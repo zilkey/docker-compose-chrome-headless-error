@@ -1,5 +1,8 @@
 #!/bin/bash
 
+
+echo ""
+echo "----------------------- serve experiment -------------------------"
 echo ""
 echo "Demonstrates that curl can access the host app on port 5000..."
 echo ""
@@ -27,3 +30,23 @@ google-chrome \
 --dump-dom \
 --enable-logging --v=10000 \
 http://app:5000/
+
+echo ""
+echo "----------------------- nginx experiment -------------------------"
+
+
+echo ""
+echo "Will nginx curl work?"
+echo
+curl http://nginx/
+
+echo ""
+echo "Will nginx chrome work?"
+echo
+google-chrome \
+--headless  \
+--disable-gpu  \
+--no-sandbox  \
+--dump-dom \
+--enable-logging --v=10000 \
+http://nginx/

@@ -9,9 +9,18 @@ services:
         - 5000:5000
       restart: always
 
+  nginx:
+      build:
+        context: .
+        dockerfile: nginx.Dockerfile
+      ports:
+        - 80:80
+      restart: always
+
   test:
     build:
         context: .
         dockerfile: Chrome.Dockerfile
     depends_on:
       - app
+      - nginx
