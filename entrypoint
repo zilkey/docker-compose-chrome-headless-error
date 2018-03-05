@@ -1,12 +1,11 @@
 #!/bin/bash
 
-
 echo ""
 echo "----------------------- serve experiment -------------------------"
 echo ""
 echo "Demonstrates that curl can access the host app on port 5000..."
 echo ""
-curl http://app:5000/
+curl http://other:5000/
 
 echo ""
 echo "Demonstrates that chrome headless is working..."
@@ -20,7 +19,7 @@ google-chrome \
 http://example.com/
 
 echo ""
-echo "Demonstrates that chrome headless is not successful with app:500"
+echo "Demonstrates that chrome headless is not successful with other:500"
 echo
 
 google-chrome \
@@ -29,7 +28,7 @@ google-chrome \
 --no-sandbox  \
 --dump-dom \
 --enable-logging --v=10000 \
-http://app:5000/
+http://other:5000/
 
 echo ""
 echo "----------------------- nginx experiment -------------------------"
